@@ -18,36 +18,39 @@
         <p class="z-depth-5"></p>
         <div class="card cyan darken-4 hoverable center-align">
           <div class="card-content white-text">
-            <form>
+            <form id = "contactForm" method = "POST" action = "">
+              {% csrf_token %}
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">First Name</label>
+                  <input name="fname" type="text">
+                  <label for="fname">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Last name</label>
+                  <input name="lname" type="text">
+                  <label for="lname">Last name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="email" type="email" class="validate">
+                  <input name="email" type="email">
                   <label for="email">Email</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Subject</label>
+                  <input name="subject" type="text">
+                  <label for="subject">Subject</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Body</label>
+                  <input name="body" type="text">
+                  <label for="body">Body</label>
                 </div>
               </div>
               <div class="row">
                 <div class = "card-action"> 
-                  <a href ="https://github.com/hvmid/DeltaNeutralData", class="waves-effect waves-light s6 btn-small cyan darken-4", target=”_blank”><i class="large material-icons">send</i></a>
+                  <button id = 'btnSend' class="waves-effect waves-light btn" type="submit" form = "contactForm" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
                 </div>
               </div>
             </form>
@@ -56,20 +59,4 @@
       </div>
   </div>
 </div>
-
-<!--   <div class="card cyan darken-4 hoverable center-align">
-    <div class="card-content white-text">
-      <div class="row" id="form">
-          <form>
-            <div class="row">
-              <div class="input-field col s6 center-align">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-              </div>
-            </div>
-          </form>
-      </div>
-    </div>
-  </div>
-</div> -->
 {% endblock %}

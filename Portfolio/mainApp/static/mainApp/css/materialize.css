@@ -1982,6 +1982,7 @@
 
 .blue-grey.lighten-4 {
   background-color: #cfd8dc !important;
+  opacity: 0.85;
 }
 
 .blue-grey-text.text-lighten-4 {
@@ -4997,7 +4998,8 @@ small {
   height: auto;
   min-height: 48px;
   line-height: 1.5em;
-  background-color: #323232;
+  background-color: #006064;
+  opacity: 0.85;
   padding: 10px 25px;
   font-size: 1.1rem;
   font-weight: 300;
@@ -5018,7 +5020,8 @@ small {
 }
 
 .toast .toast-action {
-  color: #eeff41;
+  color: #006064;
+  opacity:  0.85;
   font-weight: 500;
   margin-right: -25px;
   margin-left: 3rem;

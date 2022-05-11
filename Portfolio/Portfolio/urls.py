@@ -22,20 +22,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    path('', include('mainApp.urls')),
     path('admin/', admin.site.urls),
 ]
 
-urlpatterns += [
-    path('mainApp/', include('mainApp.urls')),
-]
-
-urlpatterns += [
-    path('', RedirectView.as_view(url='mainApp/', permanent=True)),
-]
-
-
-# urlpatterns += [
-#     path('', RedirectView.as_view(url='mainApp/', permanent=True)),
-# ]
-
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

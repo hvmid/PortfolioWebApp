@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      {% load static %}
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="{% static "mainApp/css/materialize.css" %}" >
+      <link type="text/css" rel="stylesheet" href="{% static "mainApp/css/stylessheet.css" %}" >
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="icon" href="{% static "mainApp/Images/flavicon.png" %}">
+      <script src="{% static "mainApp/js/materialize.js" %}"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://kit.fontawesome.com/acf242182d.js" crossorigin="anonymous"></script>
+      <title>Pirnia</title>
+  </head>
+  {% if messageSent == True %}
+  <body onload="M.toast({html: 'Message Sent', classes:'rounded'});">
+  {% elif messageSent == False %}
+  <body onload="M.toast({html: 'Hello', classes:'rounded'});">
+  {% endif %}
+    <header>
+      <div class="navbar-fixed"> 
+        <nav id = "hello">
+          <div class="nav-wrapper  cyan darken-4"  style = "padding-left: 15px;">
+            <a href="/" class="white-text brand-logo">Hamid Pirnia</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="#about" class="white-text">About</a></li>
+              <li><a href="#projects" class="white-text">Projects</a></li>
+              <li><a href="#contact" class="white-text">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large teal pulse">
+        <i class="large material-icons">link</i>
+      </a>
+      <ul>
+        <li><a href = "https://github.com/hvmid" target="_blank" class="btn-floating cyan darken-4"><i class="fa fa-github" style="font-size:24px"></i></a></li>
+        <li><a href = "https://www.linkedin.com/in/hamiddd/" target="_blank" class="btn-floating cyan darken-4"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a></li>
+        <li><a href = "https://www.kaggle.com/hamidyaghchi" target="_blank" class="btn-floating cyan darken-4" ><strong style="font-size:24px">k</strong></a></li>
+        <li><a href = "https://discord.gg/9KEmrA7A" target="_blank" class="btn-floating cyan darken-4"><i class="fa-brands fa-discord"></i></a></li>
+        <li><a href = "mailto:hamid.yaghchi@gmail.com" class="btn-floating cyan darken-4"><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </body>
+  <script>M.AutoInit();</script>
+</html>

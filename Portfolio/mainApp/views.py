@@ -1,24 +1,39 @@
 from django.shortcuts import render
-from .models import Label, Project
-
+from .models import Label, Project, ContactFormSubmission
+from datetime import datetime
+from django.core.mail import send_mail
 def index(request):
+    request.session['messageSent'] = False
+    if request.method == 'POST':
+        request.session['messageSent'] = True
+        firstName = request.POST['fname']
+        lastName = request.POST['lname']
+        email = request.POST['email']
+        Subject = request.POST['subject']
+        Body = request.POST['body']
+        userMessages = ContactFormSubmission(firstName = firstName, lastName = lastName, email = email, Subject = Subject, Body = Body, time = datetime.now())
+        userMessages.save()
 
-    context = {"projects":Project.objects.all}
-
-    # Render the HTML template index.html with the data in the context variable
+    messageSent = request.session.get('messageSent')
+    context = {"projects":Project.objects.all, "messageSent":messageSent}
     return render(request, 'mainApp/index.html', context=context)
 
-def projects(request):
 
-    context = {"projects":Project.objects.all}
+def privacy(request):
 
-    # Render the HTML template index.html with the data in the context variable
-    return render(request, 'mainApp/projects.html', context=context)
+    return render(request, 'mainApp/privacy.html')
 
-def about(request):
 
-    return render(request, 'mainApp/about.html')
+def terms(request):
 
-def contact(request):
+    return render(request, 'mainApp/terms.html')
 
-    return render(request, 'mainApp/contact.html')
+
+def license(request):
+
+    return render(request, 'mainApp/license.html')
+
+
+def credits(request):
+
+    return render(request, 'mainApp/credits.html')

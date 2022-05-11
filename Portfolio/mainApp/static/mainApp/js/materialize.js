@@ -5202,7 +5202,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         anim({
           targets: this.el,
           top: 0,
-          opacity: 1,
+          opacity: .85,
           duration: this.options.inDuration,
           easing: 'easeOutCubic'
         });
