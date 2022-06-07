@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Language, Label, Project, projectLabel, ContactFormSubmission, skill
+from .models import Project, projectSkill, contactFormSubmission, Skill, Blog
 
 
-admin.site.register(Language)
-admin.site.register(Label)
+
 admin.site.register(Project)
-admin.site.register(projectLabel)
-admin.site.register(ContactFormSubmission)
-admin.site.register(skill)
+admin.site.register(projectSkill)
+admin.site.register(contactFormSubmission)
+admin.site.register(Skill)
+admin.site.register(Blog)

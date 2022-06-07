@@ -15,44 +15,18 @@
 
   <div class="row">
       <div class="col s12">
-        <p class="z-depth-5"></p>
-        <div class="card cyan darken-4 hoverable center-align">
+        <div class="card cyan darken-4 hoverable center-align z-depth-5">
           <div class="card-content white-text">
             <form id = "contactForm" method = "POST" action = "">
-              {% csrf_token %}
-              <div class="row">
-                <div class="input-field col s6">
-                  <input name="fname" type="text">
-                  <label for="fname">First Name</label>
+                {% csrf_token %}
+                {{form}}
+                <div class="row" style="text-align: center;">
+                  <div class="input-field col" style= "text-align: center; margin-left: 410px;" >
+                      <button class="btn waves-effect teal" type="submit" name="action" >Submit
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </div>          
                 </div>
-                <div class="input-field col s6">
-                  <input name="lname" type="text">
-                  <label for="lname">Last name</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6">
-                  <input name="email" type="email">
-                  <label for="email">Email</label>
-                </div>
-                <div class="input-field col s6">
-                  <input name="subject" type="text">
-                  <label for="subject">Subject</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input name="body" type="text">
-                  <label for="body">Body</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class = "card-action"> 
-                  <button id = 'btnSend' class="waves-effect waves-light btn" type="submit" form = "contactForm" name="action">Submit
-                    <i class="material-icons right">send</i>
-                  </button>
-                </div>
-              </div>
             </form>
           </div>
         </div>

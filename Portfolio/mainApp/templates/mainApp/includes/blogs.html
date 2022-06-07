@@ -1,0 +1,31 @@
+{% block content %}
+{% load static %}
+<div class="container" id="blog" style="padding-top: 60px; margin-top: -60px; opacity:0.8">
+  <div class="row">
+      <div class="col s12">
+        <p class="z-depth-5"></p>
+        <div class="card cyan darken-4 hoverable center-align">
+          <div class="card-content white-text">
+            <span class="card-title white-text"><strong>Blog</strong></span>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container" id = "blogList" style="opacity:0.88">
+  <div class="row">
+    {% for blog in blogs %}
+        <div class="col s6">
+          <div class="card horizontal teal lighten-2">
+            <div class="card-stacked">
+              <div class="card-content" style="padding-top: 0;">
+                <span><h5><a href="#" style="color:#006064">{{blog.title}}</a></h5></span>
+                <p>{{blog.published}} (GTM)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
